@@ -9,8 +9,11 @@ class WeatherController < ApplicationController
 
     if @address.present?
       logger.debug "WeatherController#index: address submitted - #{@address}"
-      @weather = OpenWeatherMapService.fetch @address
+    else
+      @address = 'Denton, TX'
     end
+
+    @weather = OpenWeatherMapService.fetch @address
 
   rescue => e
     Honeybadger.notify e
