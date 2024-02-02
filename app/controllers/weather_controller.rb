@@ -3,7 +3,7 @@ class WeatherController < ApplicationController
   # OpenWeatherMapService calls 2 external apis, so this should probably be 
   # refactored from a direct call into a background job. 
   # We would then display a spinner to the user and update the client once we
-  # have a result with hotwire.
+  # have a result via TurboStreams or old fashioned polling.
   def index
     @address = params[:address]
 
@@ -13,6 +13,7 @@ class WeatherController < ApplicationController
     end
 
   rescue => e
+    Honeybadger.notify e
     flash.now[:error] = e.message
   end
 end
