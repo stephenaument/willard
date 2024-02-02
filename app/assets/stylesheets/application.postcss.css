@@ -49,15 +49,15 @@ h2, h3 { color: #333; }
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#currentTemp { font-size: 40px; }
+#current_temp { font-size: 40px; }
 
-#dailyForecast { margin-top: 20px; text-align: center; }
+#weather, #weather_details { margin-top: 20px; text-align: center; }
 
-#forecastDetails p { margin: 5px 0; }
+#weather_details p { margin: 5px 0; }
 
 .material-symbols-outlined, #highTemp, #lowTemp { font-size: 18px; }
 
-#weatherConditions { font-size: 20px; }
+#weather_conditions { font-size: 20px; }
 
 #wind, #precipitation { font-size: 16px; }
 

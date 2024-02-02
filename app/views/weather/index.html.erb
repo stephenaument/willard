@@ -1,8 +1,7 @@
 <h1>Willard tells you the weather!</h1>
 <%= form_with method: :get do |form| %>
-  <%= form.text_field :address, placeholder: "Enter address" %>
+  <%= form.text_field :address, value: @address, placeholder: "Enter address", input_html: { autofocus: true } %>
   <%= form.submit "Tell me, Willard" %>
 <% end %>
-<div id="dailyForecast">
-  <%= render partial: 'forecast_details' if @weather.present? %>
-</div>
+
+<%= render partial: 'weather', locals: { weather: @weather } if @weather.present? %>
