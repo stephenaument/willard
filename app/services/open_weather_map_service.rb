@@ -17,9 +17,9 @@ class OpenWeatherMapService
 
   def initialize(address)
     @geocoder_tries = 0
-    @weather_tries = 0
+    @weather_tries  = 0
     @geocoder_sleep = 0
-    @weather_sleep = 0
+    @weather_sleep  = 0
     @city = geocode sanitize(address)
   end
 

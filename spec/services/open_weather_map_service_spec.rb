@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'json'
 
 RSpec.describe OpenWeatherMapService do
   Geocoder.configure(lookup: :test, ip_lookup: :test)
