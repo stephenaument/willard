@@ -17,9 +17,10 @@ class OpenWeatherMapService
 
   def initialize(address)
     @geocoder_tries = 0
-    @weather_tries  = 0
     @geocoder_sleep = 0
+    @weather_tries  = 0
     @weather_sleep  = 0
+
     @city = geocode sanitize(address)
   end
 
@@ -30,7 +31,7 @@ class OpenWeatherMapService
   end
 
   def fetch
-    Weather.new(check_cache || write_and_return_cache)
+    Weather.new(check_cache || fetch_and_cache)
   end
 
   def check_cache
@@ -38,7 +39,7 @@ class OpenWeatherMapService
     cached_response.merge({cached: true}) if cached_response.present?
   end
 
-  def write_and_return_cache
+  def fetch_and_cache
     Rails.cache.write(city.zip, weather_response)
     weather_response
   end
