@@ -9,7 +9,7 @@ Willard uses the [geocoder gem](https://github.com/alexreisner/geocoder) backed 
 
  Willard uses the [openweathermap.org](https://openweathermap.org/) api for weather info.
 
- Results are cached for 30 minutes to redis.
+ Results are cached by zip code for 30 minutes to redis.
 
  Exceptions are logged to Honeybadger.
 
