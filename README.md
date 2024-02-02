@@ -33,6 +33,16 @@ After setting up, you can run the application using [Heroku Local]:
 
 [Heroku Local]: https://devcenter.heroku.com/articles/heroku-local
 
+You can run tests with rspec:
+
+    % bundle exec rspec
+
+There are a couple of tests that exercise timeouts and retries. These are excluded
+by default. To run them all you can set `ALL=1` in your environment or on an
+individual run like this:
+
+    % ALL=1 bundle exec rspec
+
 ## Guidelines
 
 Use the following guides for getting things done, programming well, and
