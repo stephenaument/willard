@@ -7,24 +7,31 @@ end
 
 ruby "3.1.3"
 
-
-
 gem "bootsnap", require: false
 gem "cssbundling-rails"
 gem "geocoder"
 gem "hashie"
+gem "high_voltage"
 gem "honeybadger"
 gem "httparty"
+gem "inline_svg"
 gem "jsbundling-rails"
+gem "oj"
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
+gem "rack-mini-profiler", require: false
+gem "rack-timeout", group: :production
 gem "rails", "~> 7.0.0"
 gem "recipient_interceptor"
+gem "redis", "~> 4.0"
 gem "redis-rails"
 gem "sassc-rails"
+gem "sidekiq"
+gem "simple_form"
 gem "skylight"
 gem "sprockets-rails"
+gem "standard", group: :development
 gem "stimulus-rails"
 gem "title"
 gem "turbo-rails"
@@ -37,48 +44,23 @@ end
 
 group :development, :test do
   gem "awesome_print"
+  gem "bullet"
+  gem "bundler-audit", ">= 0.7.0", require: false
+  gem "factory_bot_rails"
   gem "pry-byebug"
   gem "pry-rails"
+  gem "rspec-rails", "~> 5.1"
+  gem "suspenders"
 end
 
 group :test do
   gem "formulaic"
   gem "launchy"
+  gem "shoulda-matchers"
+  gem "simplecov", require: false
   gem "timecop"
+  gem "webdrivers"
   gem "webmock"
 end
 
-gem "suspenders", group: [:development, :test]
 
-gem "rack-mini-profiler", require: false
-
-gem "oj"
-
-gem "high_voltage"
-
-gem "rspec-rails", "~> 5.1", group: [:development, :test]
-
-gem "shoulda-matchers", group: :test
-
-gem "simplecov", require: false, group: [:test]
-
-gem "webdrivers", group: :test
-
-gem "simple_form"
-
-gem "bullet", group: [:development, :test]
-
-gem "factory_bot_rails", group: [:development, :test]
-
-gem "standard", group: :development
-
-gem "sidekiq"
-
-gem "inline_svg"
-
-gem "bundler-audit", ">= 0.7.0", require: false, group: [:development, :test]
-
-gem "rack-timeout", group: :production
-
-# Use Redis for Action Cable
-gem "redis", "~> 4.0"
