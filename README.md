@@ -1,5 +1,20 @@
 # Willard
 
+Willard is a simple weather app that displays current weather info for a given
+location.
+
+Willard uses the [geocoder gem](https://github.com/alexreisner/geocoder) backed by 
+ [geocodio](https://www.geocod.io/) for geocoding user input for both lat/lon info
+ for the weather search and caching by zip code.
+
+ Willard uses the [openweathermap.org](https://openweathermap.org/) api for weather info.
+
+ Results are cached for 30 minutes to redis.
+
+ Exceptions are logged to Honeybadger.
+
+ The application is ready to deploy to Heroku.
+
 ## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine
