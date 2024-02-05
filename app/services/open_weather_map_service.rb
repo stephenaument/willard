@@ -30,16 +30,16 @@ class OpenWeatherMapService
   end
 
   def fetch
-    Weather.new(check_cache || fetch_and_cache)
+    Weather.new(retrieve_from_cache || fetch_and_cache)
   end
 
-  def check_cache
+  def retrieve_from_cache
     cached_response = Rails.cache.read(city.zip)
     cached_response.merge({cached: true}) if cached_response.present?
   end
 
   def fetch_and_cache
-    Rails.cache.write(city.zip, weather_response)
+    Rails.cache.write(city.zip, weather_response, expires_in: 30.minutes)
     weather_response
   end
 
