@@ -8,7 +8,6 @@ class OpenWeatherMapService
     Geocoder::ServiceUnavailable,
   ]
   GEOCODER_MAX_ATTEMPTS = 3
-  GEOCODER_RETRY_INTERVAL = 5 # seconds
   OPEN_WEATHER_MAP_URL = "https://api.openweathermap.org/data/2.5/weather"
   RETRY_INCREMENT = 5 # seconds
   WEATHER_MAX_ATTEMPTS = 3
