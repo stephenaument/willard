@@ -1,5 +1,6 @@
 require 'hashie/mash'
 
+# This class adapts the openweathermap.org response to our internal model.
 class Weather
   # The wind.degrees value gives the direction the wind is coming _from_.
   # We want to show an arrow depicting the direction of the wind, so, pointing
